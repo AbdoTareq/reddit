@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-abstract class Failure extends Equatable {}
+abstract class Failure {}
 
 class OfflineFailure extends Failure {
   @override
