@@ -1,6 +1,4 @@
-import 'package:chewie/chewie.dart';
 import 'package:reddit/core/color_manager.dart';
-import 'package:video_player/video_player.dart';
 
 import '../../../export.dart';
 
@@ -23,21 +21,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           leading: Icon(Icons.arrow_back, color: Colors.white),
           backgroundColor: ColorManager.black,
         ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Chewie(
-              controller: ChewieController(
-                  videoPlayerController: VideoPlayerController.network(
-                      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4')),
-            ).h(.2.sh),
-          ],
-        )
       ],
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(1.sh);
+  Size get preferredSize => Size.fromHeight(.06.sh);
 }
