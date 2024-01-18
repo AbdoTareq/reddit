@@ -1,4 +1,4 @@
-package com.simplute.flutter_new_template
+package com.reddit.clone
 
 import io.flutter.embedding.android.FlutterActivity
 

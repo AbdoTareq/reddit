@@ -1,5 +1,5 @@
-import 'package:flutter_new_template/export.dart';
 import 'package:get_it/get_it.dart';
+import 'package:reddit/export.dart';
 
 final sl = GetIt.instance;
 

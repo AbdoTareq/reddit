@@ -1,4 +1,4 @@
-name: flutter_new_template
+name: reddit
 description: A new Flutter template.
 
 # The following line prevents the package from being accidentally published to
@@ -41,6 +41,7 @@ dependencies:
   flutter_hooks: ^0.20.4
   get_it: ^7.6.6
   chewie:
+  video_player:
 
 dev_dependencies:
   flutter_test:

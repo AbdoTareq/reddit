@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.simplute.flutter_new_template">
+    package="com.reddit.clone">
    <application
-        android:label="flutter_new_template"
+        android:label="reddit"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

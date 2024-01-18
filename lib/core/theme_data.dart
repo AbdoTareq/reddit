@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_new_template/core/color_manager.dart';
+import 'package:reddit/core/color_manager.dart';
 
 ThemeData appTheme() {
   return ThemeData(

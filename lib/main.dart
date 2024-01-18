@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_new_template/features/post/post_screen.dart';
+import 'package:reddit/features/post/post_screen.dart';
 
-import 'export.dart';
 import 'core/injection_container.dart' as di;
+import 'export.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
