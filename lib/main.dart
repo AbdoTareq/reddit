@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:flutter_new_template/features/post/post_screen.dart';
 
 import 'export.dart';
 import 'core/injection_container.dart' as di;
@@ -28,12 +29,10 @@ class MyApp extends StatelessWidget {
         designSize: Size(baseWidth, baseHeight),
         minTextAdapt: true,
         builder: (BuildContext context, Widget? child) {
-          return MultiBlocProvider(
-            providers: [],
-            child: MaterialApp.router(
-              theme: isDark ? darkTheme : lightTheme,
-              debugShowCheckedModeBanner: false,
-            ),
+          return MaterialApp(
+            home: PostScreen(),
+            theme: darkTheme,
+            debugShowCheckedModeBanner: false,
           );
         });
   }
