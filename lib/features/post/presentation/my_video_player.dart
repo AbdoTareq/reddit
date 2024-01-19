@@ -15,7 +15,7 @@ class MyVideoPlayer extends StatelessWidget {
       width: double.infinity,
       child: Chewie(
         controller: ChewieController(
-          // autoPlay: true,
+          autoPlay: true,
           aspectRatio: 16 / 7,
           videoPlayerController: VideoPlayerController.network(videoId),
         ),

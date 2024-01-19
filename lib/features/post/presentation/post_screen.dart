@@ -1,4 +1,5 @@
 import 'package:reddit/core/view/widgets/custom_app_bar.dart';
+import 'package:reddit/core/view/widgets/shimmer_list.dart';
 import 'package:reddit/export.dart';
 import 'package:reddit/features/post/presentation/comment.dart';
 import 'package:reddit/features/post/presentation/comment_sort_sheet.dart';
@@ -51,7 +52,13 @@ class _PostScreenState extends State<PostScreen> {
         bloc: screenCubit,
         builder: (BuildContext context, PostState state) {
           if (state.isLoading) {
-            return Center(child: CircularProgressIndicator());
+            return ListView(
+              children: [
+                VxShimmer(child: ShimmerChild(height: 400)),
+                ...List.generate(
+                    6, (index) => VxShimmer(child: ShimmerChild(height: 100)))
+              ],
+            );
           }
           if (state.error != null) {
             return state.error!.text.red500.bold.xl.makeCentered().p8();

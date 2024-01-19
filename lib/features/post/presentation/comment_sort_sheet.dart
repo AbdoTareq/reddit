@@ -103,6 +103,5 @@ class CommentSortSheet extends StatelessWidget {
     screenCubit.update(screenCubit.state.data!
         .copyWith(comments: post.comments.reversed.toList()));
     Navigator.pop(context);
-    Navigator.pop(context);
   }
 }
