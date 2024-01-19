@@ -1,6 +1,5 @@
-import 'package:reddit/features/post/ch_bottom_sheet.dart';
-
-import '../../export.dart';
+import 'package:reddit/export.dart';
+import 'package:reddit/features/post/presentation/ch_bottom_sheet.dart';
 
 class CommentActions extends StatelessWidget {
   const CommentActions({

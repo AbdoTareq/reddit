@@ -1,5 +1,5 @@
 import 'package:flutter/services.dart';
-import 'package:reddit/features/post/post_screen.dart';
+import 'package:reddit/features/post/presentation/post_screen.dart';
 
 import 'core/injection_container.dart' as di;
 import 'export.dart';

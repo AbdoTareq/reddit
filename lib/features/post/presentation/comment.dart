@@ -1,6 +1,5 @@
-import 'package:reddit/features/post/comment_actions.dart';
-
-import '../../export.dart';
+import 'package:reddit/export.dart';
+import 'package:reddit/features/post/presentation/comment_actions.dart';
 
 class Comment extends StatelessWidget {
   const Comment({

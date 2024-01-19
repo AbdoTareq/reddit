@@ -1,13 +1,10 @@
-import 'package:reddit/core/color_manager.dart';
 import 'package:reddit/core/view/widgets/custom_app_bar.dart';
 import 'package:reddit/export.dart';
-import 'package:reddit/features/post/comment.dart';
-import 'package:reddit/features/post/comment_actions.dart';
-import 'package:reddit/features/post/post_cubit.dart';
-import 'package:reddit/features/post/post_state.dart';
-import 'package:reddit/features/post/video_actions.dart';
-import 'package:reddit/features/post/my_video_player.dart';
-import 'package:video_player/video_player.dart';
+import 'package:reddit/features/post/presentation/comment.dart';
+import 'package:reddit/features/post/presentation/my_video_player.dart';
+import 'package:reddit/features/post/presentation/post_cubit.dart';
+import 'package:reddit/features/post/presentation/post_state.dart';
+import 'package:reddit/features/post/presentation/video_actions.dart';
 
 class PostScreen extends StatefulWidget {
   const PostScreen({Key? key}) : super(key: key);

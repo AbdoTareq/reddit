@@ -1,4 +1,4 @@
-import '../../export.dart';
+import 'package:reddit/export.dart';
 
 class ChBottomSheet extends StatelessWidget {
   const ChBottomSheet({

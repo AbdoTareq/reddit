@@ -1,7 +1,6 @@
 import 'package:chewie/chewie.dart';
+import 'package:reddit/export.dart';
 import 'package:video_player/video_player.dart';
-
-import '../../export.dart';
 
 class MyVideoPlayer extends StatelessWidget {
   const MyVideoPlayer({
