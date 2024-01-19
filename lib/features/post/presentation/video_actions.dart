@@ -1,9 +1,27 @@
 import 'package:reddit/export.dart';
+import 'package:reddit/features/post/presentation/post_cubit.dart';
+import 'package:reddit/models/post.dart';
 
-class VideoActions extends StatelessWidget {
-  const VideoActions({
+class VideoActions extends StatefulWidget {
+  VideoActions(
+    this.post,
+    this.scrollController, {
     super.key,
   });
+  final Post post;
+  final ScrollController scrollController;
+
+  @override
+  State<VideoActions> createState() => _VideoActionsState();
+}
+
+class _VideoActionsState extends State<VideoActions> {
+  late int votes;
+  @override
+  void initState() {
+    votes = widget.post.votes;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +32,51 @@ class VideoActions extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.upload_outlined, size: 30.w),
+            onPressed: () {
+              votes = widget.post.votes + 1;
+              setState(() {});
+            },
+            icon: Icon(
+              Icons.upload_outlined,
+              size: 30.w,
+              color: votes > widget.post.votes
+                  ? ColorManager.red
+                  : ColorManager.white,
+            ),
           ),
-          '266'.text.bold.xl.make(),
+          votes.text.bold.xl.make(),
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.download_outlined, size: 30.w),
+            onPressed: () {
+              votes = widget.post.votes - 1;
+              setState(() {});
+            },
+            icon: Icon(
+              Icons.download_outlined,
+              size: 30.w,
+              color: votes < widget.post.votes
+                  ? ColorManager.purple
+                  : ColorManager.white,
+            ),
           ).pOnly(bottom: 12.h),
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.mode_comment_outlined, size: 30.w),
+            onPressed: () {
+              widget.scrollController.animToBottom();
+            },
+            icon: Icon(
+              Icons.mode_comment_outlined,
+              size: 30.w,
+            ),
           ),
-          '61'.text.bold.xl.make().pOnly(bottom: 12.h),
+          widget.post.comments.length
+              .toString()
+              .text
+              .bold
+              .xl
+              .make()
+              .pOnly(bottom: 12.h),
           IconButton(
-            onPressed: () {},
+            onPressed: () => sl<PostCubit>().update(
+                widget.post.copyWith(comments: [widget.post.comments.first])),
             icon: Icon(Icons.ios_share_rounded, size: 30.w),
           ),
         ],

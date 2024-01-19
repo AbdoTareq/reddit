@@ -5,7 +5,9 @@ import 'package:video_player/video_player.dart';
 class MyVideoPlayer extends StatelessWidget {
   const MyVideoPlayer({
     super.key,
+    required this.videoId,
   });
+  final String videoId;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +15,9 @@ class MyVideoPlayer extends StatelessWidget {
       width: double.infinity,
       child: Chewie(
         controller: ChewieController(
+          // autoPlay: true,
           aspectRatio: 16 / 7,
-          videoPlayerController: VideoPlayerController.network(
-              'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
+          videoPlayerController: VideoPlayerController.network(videoId),
         ),
       ),
     ).px8().pOnly(bottom: 20);

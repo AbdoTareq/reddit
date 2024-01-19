@@ -1,10 +1,14 @@
 import 'package:reddit/export.dart';
+import 'package:reddit/features/post/presentation/post_cubit.dart';
+import 'package:reddit/models/comment_model.dart';
 
 class ChBottomSheet extends StatelessWidget {
-  const ChBottomSheet({
+  ChBottomSheet(
+    this.comment, {
     Key? key,
   }) : super(key: key);
-
+  final screenCubit = sl<PostCubit>();
+  final CommentModel comment;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,6 +44,15 @@ class ChBottomSheet extends StatelessWidget {
                 title: 'Edit'.text.bold.xl.make().p8(),
               ),
               ListTile(
+                onTap: () {
+                  showOptionsDialog(context,
+                      title: 'Are you sure?',
+                      text:
+                          'You cannot restore comments that have been deleted.',
+                      yesFunction: () {
+                    removeComment(context);
+                  });
+                },
                 leading: Icon(Icons.delete_outline, size: 30.w),
                 title: 'Delete'.text.bold.xl.make().p8(),
               ),
@@ -55,5 +68,12 @@ class ChBottomSheet extends StatelessWidget {
         ),
       ).h56(context),
     );
+  }
+
+  void removeComment(BuildContext context) {
+    screenCubit.state.data!.comments.remove(comment);
+    screenCubit.update(screenCubit.state.data!);
+    Navigator.pop(context);
+    Navigator.pop(context);
   }
 }
