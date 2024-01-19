@@ -28,7 +28,7 @@ class RoundedCornerButton extends StatelessWidget {
                       MaterialStateProperty.all<Color>(Colors.white),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(30.0),
                     side: BorderSide(color: kPrimaryColor),
                   )))
               : ButtonStyle(
@@ -36,7 +36,7 @@ class RoundedCornerButton extends StatelessWidget {
                       MaterialStateProperty.all<Color>(color ?? kPrimaryColor),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(30.0),
                   ))),
           onPressed: onPressed),
     );

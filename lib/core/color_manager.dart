@@ -14,7 +14,7 @@ class ColorManager {
   static const Color darkGrey =
       Color(0xff181a1b); //posts background, colorless buttons
   static const Color betterDarkGrey =
-      Color(0xff1e1e1e); //posts background, colorless buttons
+      Color(0x141114); //posts background, colorless buttons
 
   static const Color lightGrey =
       Color(0xff8d857b); //text in appbar, small headlines and icons
@@ -65,6 +65,7 @@ class ColorManager {
       Color(0xffcc3700); //news growing down arrow
 
   static const Color bottomSheetBackgound = Color(0xFF212121);
+  static const Color white38 = Colors.white38;
   static const Color bottomSheetTitle = Color.fromRGBO(129, 131, 132, 1);
   static const Color unselectedItem = Color.fromRGBO(86, 87, 88, 1);
 
