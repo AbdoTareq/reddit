@@ -35,12 +35,16 @@ class _PostScreenState extends State<PostScreen> {
   void initState() {
     screenCubit.loadInitialData();
     scrollController.addListener(() {
-      showVideoActions = scrollController.offset < 100;
-      setState(() {});
+      if ((scrollController.offset < 100) != showVideoActions) {
+        showVideoActions = scrollController.offset < 100;
+        setState(() {});
+      }
     });
     textEditingController.addListener(() {
-      showReply = textEditingController.text.isNotEmpty;
-      setState(() {});
+      if ((textEditingController.text.isNotEmpty) != showReply) {
+        showReply = textEditingController.text.isNotEmpty;
+        setState(() {});
+      }
     });
     super.initState();
   }
